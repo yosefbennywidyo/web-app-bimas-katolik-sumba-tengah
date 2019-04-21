@@ -22,13 +22,18 @@ puts "Berhasil membuat #{Peran.count} Peran"
 puts ""
 puts ""
 puts "Membuat User"
-user_1 = User.create({nama_lengkap: "Guru Agama Katolik", email: "guru@pendakat-sumteng.go.id", password: "qqqqqq", password_confirmation: "qqqqqq", peran_id: peran_2.id})
-user_2 = User.create({nama_lengkap: "Pegawai Pendakat", email: "pegawai@pendakat-sumteng.go.id", password: "qqqqqq", password_confirmation: "qqqqqq", peran_id: peran_3.id})
-user_3 = User.create({nama_lengkap: "Penyelenggara Pendakat", email: "penyelenggara@pendakat-sumteng.go.id", password: "qqqqqq", password_confirmation: "qqqqqq", peran_id: peran_4.id})
-user_4 = User.create({nama_lengkap: "Penyuluh Agama Katolik", email: "penyuluh@urakat-sumteng.go.id", password: "qqqqqq", password_confirmation: "qqqqqq", peran_id: peran_5.id})
-user_5 = User.create({nama_lengkap: "Pegawai Urakat", email: "pegawai@urakat-sumteng.go.id", password: "qqqqqq", password_confirmation: "qqqqqq", peran_id: peran_6.id})
-user_6 = User.create({nama_lengkap: "Kasie Urakat", email: "kasie@urakat-sumteng.go.id", password: "qqqqqq", password_confirmation: "qqqqqq", peran_id: peran_7.id})
-user_7 = User.create({nama_lengkap: "Admin", email: "admin@kemenag-sumteng.go.id", password: "qqqqqq", password_confirmation: "qqqqqq", peran_id: peran_8.id})
+user_1 = User.create({nama_lengkap: "Guru Agama Katolik", email: "guru@pendakat-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_2.id})
+user_2 = User.create({nama_lengkap: "Pegawai Pendakat", email: "pegawai@pendakat-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_3.id})
+user_3 = User.create({nama_lengkap: "Penyelenggara Pendakat", email: "penyelenggara@pendakat-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_4.id})
+user_4 = User.create({nama_lengkap: "Penyuluh Agama Katolik", email: "penyuluh@urakat-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_5.id})
+user_5 = User.create({nama_lengkap: "Pegawai Urakat", email: "pegawai@urakat-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_6.id})
+user_6 = User.create({nama_lengkap: "Kasie Urakat", email: "kasie@urakat-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_7.id})
+user_7 = User.create({nama_lengkap: "Dummy User I", email: "du-1@kemenag-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_1.id})
+user_8 = User.create({nama_lengkap: "Dummy User II", email: "du-2@kemenag-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_1.id})
+user_9 = User.create({nama_lengkap: "Dummy User III", email: "du-3@kemenag-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_1.id})
+user_10 = User.create({nama_lengkap: "Dummy User IV", email: "du-4@kemenag-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_1.id})
+user_11 = User.create({nama_lengkap: "Dummy User V", email: "du-5@kemenag-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_1.id})
+user_12 = User.create({nama_lengkap: "Admin", email: "admin@kemenag-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_8.id})
 puts ""
 puts "Berhasil membuat #{User.count} User"
 puts ""
