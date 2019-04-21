@@ -13,5 +13,20 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>Bergabung sejak:</strong>
+  <%= @bergabung_sejak %>
+</p>
+
+<p>
+  <strong>Terakhir masuk pada:</strong>
+  <%= @terakhir_masuk %>
+</p>
+
+<p>
+  <strong>Jumlah total masuk:</strong>
+  <%= @user.total_masuk %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
