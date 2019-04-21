@@ -1,0 +1,2 @@
+class Peran < ApplicationRecord
+end

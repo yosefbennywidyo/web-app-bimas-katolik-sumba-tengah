@@ -1,0 +1,27 @@
+<%= form_with(model: peran, local: true) do |form| %>
+  <% if peran.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(peran.errors.count, "error") %> prohibited this peran from being saved:</h2>
+
+      <ul>
+      <% peran.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nama_peran %>
+    <%= form.text_field :nama_peran %>
+  </div>
+
+  <div class="field">
+    <%= form.label :keterangan %>
+    <%= form.text_field :keterangan %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

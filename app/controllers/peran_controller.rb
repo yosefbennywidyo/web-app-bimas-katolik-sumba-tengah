@@ -1,0 +1,74 @@
+class PeranController < ApplicationController
+  before_action :set_peran, only: [:show, :edit, :update, :destroy]
+
+  # GET /peran
+  # GET /peran.json
+  def index
+    @peran = Peran.all
+  end
+
+  # GET /peran/1
+  # GET /peran/1.json
+  def show
+  end
+
+  # GET /peran/new
+  def new
+    @peran = Peran.new
+  end
+
+  # GET /peran/1/edit
+  def edit
+  end
+
+  # POST /peran
+  # POST /peran.json
+  def create
+    @peran = Peran.new(peran_params)
+
+    respond_to do |format|
+      if @peran.save
+        format.html { redirect_to @peran, notice: 'Peran was successfully created.' }
+        format.json { render :show, status: :created, location: @peran }
+      else
+        format.html { render :new }
+        format.json { render json: @peran.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /peran/1
+  # PATCH/PUT /peran/1.json
+  def update
+    respond_to do |format|
+      if @peran.update(peran_params)
+        format.html { redirect_to @peran, notice: 'Peran was successfully updated.' }
+        format.json { render :show, status: :ok, location: @peran }
+      else
+        format.html { render :edit }
+        format.json { render json: @peran.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /peran/1
+  # DELETE /peran/1.json
+  def destroy
+    @peran.destroy
+    respond_to do |format|
+      format.html { redirect_to peran_index_url, notice: 'Peran was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_peran
+      @peran = Peran.find(params[:id])
+    end
+
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def peran_params
+      params.require(:peran).permit(:nama_peran, :keterangan)
+    end
+end
