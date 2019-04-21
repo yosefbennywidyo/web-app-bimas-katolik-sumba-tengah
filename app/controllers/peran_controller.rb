@@ -1,4 +1,5 @@
 class PeranController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_peran, only: [:show, :edit, :update, :destroy]
 
   # GET /peran
