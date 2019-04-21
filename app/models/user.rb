@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  validates :nama_lengkap, length: { minimum: 6 }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -6,9 +7,9 @@ class User < ApplicationRecord
   belongs_to :peran
   has_many :data_keagamaan_katolik
 
-  before_create :set_default_role
+  #before_create :set_default_role
   # or 
-  # before_validation :set_default_role 
+  before_validation :set_default_role 
 
   private
   def set_default_role
