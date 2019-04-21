@@ -5,4 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   belongs_to :peran
   has_many :data_keagamaan_katolik
+
+  before_create :set_default_role
+  # or 
+  # before_validation :set_default_role 
+
+  private
+  def set_default_role
+    self.role ||= Peran.find_by_nama_peran('Pemirsa')
+  end
 end
