@@ -11,10 +11,10 @@ class PeranController < ApplicationController
   # GET /peran/1
   # GET /peran/1.json
   def show
-    if @role.users.length == 0
+    if @peran.users.length == 0
       @user_terhubung = "Tidak ada yang terhubung"
     else
-      @user_terhubung = @role.users.map(&:nama_lengkap).join(", ")
+      @user_terhubung = @peran.users.map(&:nama_lengkap).join(", ")
     end
   end
 
