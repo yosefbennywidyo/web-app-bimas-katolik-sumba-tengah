@@ -1,0 +1,8 @@
+<% if user_signed_in? %>
+  Anda masuk sebagai <%= current_user.nama_lengkap %>.
+  <%= link_to "Edit profil", edit_user_registration_path %> atau
+  <%= link_to "Keluar", destroy_user_session_path, :method => :delete %>
+<% else %>
+  <%= link_to "Mendaftar", new_user_registration_path %> atau
+  <%= link_to "Masuk", new_user_session_path %>
+<% end %>
