@@ -35,4 +35,5 @@ ActiveSupport::Inflector.inflections(:en) do |inflect|
 	inflect.irregular 'pengguna', 'pengguna'
 	inflect.irregular 'aktivasi', 'aktivasi'
 	inflect.irregular 'akun', 'akun'
+	inflect.irregular 'tautan', 'tautan'
 end
