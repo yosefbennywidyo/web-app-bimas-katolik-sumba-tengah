@@ -4,6 +4,11 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+    <%= f.label :nama_lengkap %><br />
+    <%= f.text_field :nama_lengkap %>
+  </div>
+
+  <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -17,7 +22,7 @@
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em>Panjang password minimal<%= @minimum_password_length %> karakter</em>
+      <em>Panjang kata sandi minimal<%= @minimum_password_length %> karakter</em>
     <% end %>
   </div>
 
@@ -27,7 +32,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(kami membutuhkan password Anda saat ini untuk mengonfirmasi)</i><br />
+    <%= f.label :current_password %> <i>(kami membutuhkannya untuk memastikan bahwa ini benar akun Anda)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
