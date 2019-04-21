@@ -5,6 +5,7 @@
     <tr>
       <th>Nama lengkap</th>
       <th>Peran</th>
+      <th>Email</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
       <tr>
         <td><%= user.nama_lengkap %></td>
         <td><%= user.peran.nama_peran %></td>
+        <td><%= user.email %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+
+  scope "/mengelola" do
+  	resources :users
+  end
+
   get 'beranda/index'
   resources :data_keagamaan_katolik
   resources :peran

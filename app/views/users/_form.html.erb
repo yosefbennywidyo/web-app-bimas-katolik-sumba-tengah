@@ -21,6 +21,16 @@
     <%= collection_select(:user, :peran_id, Peran.all, :id, :name, {prompt: true}) %>
   </div>
 
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.password_field :password, placeholder: "Biarkan kosong jika tidak ingin mengubahnya" %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
