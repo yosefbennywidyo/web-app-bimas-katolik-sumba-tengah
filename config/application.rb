@@ -17,8 +17,8 @@ module WaBs
     # the framework and any gems in your application.
 
     # Rails Internationalization and localization
-    I18n.load_path << Dir[File.expand_path("config/locales") + "/*.yml"]
+    config.i18n.load_path += Dir[Rails.root.join('locales', '*.{rb,yml}').to_s]
     #I18n.default_locale = :en # (note that `en` is already the default!)
-    I18n.default_locale = :id
+    config.i18n.default_locale = :'id'
   end
 end
