@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :peran_id %>
-    <%= form.text_field :peran_id %>
+    <%= collection_select(:user, :role_id, Role.all, :id, :name, {prompt: true}) %>
   </div>
 
   <div class="actions">
