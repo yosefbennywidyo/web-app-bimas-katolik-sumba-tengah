@@ -4,7 +4,6 @@
   <thead>
     <tr>
       <th>Nama peran</th>
-      <th>Keterangan</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -13,7 +12,6 @@
     <% @peran.each do |peran| %>
       <tr>
         <td><%= peran.nama_peran %></td>
-        <td><%= peran.keterangan %></td>
         <td><%= link_to 'Show', peran %></td>
         <td><%= link_to 'Edit', edit_peran_path(peran) %></td>
         <td><%= link_to 'Destroy', peran, method: :delete, data: { confirm: 'Are you sure?' } %></td>
