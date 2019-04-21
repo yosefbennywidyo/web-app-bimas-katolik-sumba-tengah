@@ -4,7 +4,6 @@ class CreateDataKeagamaanKatolik < ActiveRecord::Migration[5.2]
       t.string :judul
       t.string :keterangan
       t.string :tautan
-      t.belongs_to :user, foreign_key: true
 
       t.timestamps
     end
