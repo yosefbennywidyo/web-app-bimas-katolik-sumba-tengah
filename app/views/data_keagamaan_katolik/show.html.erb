@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Judul:</strong>
   <%= @data_keagamaan_katolik.judul %>
@@ -16,8 +14,8 @@
 </p>
 
 <p>
-  <strong>User:</strong>
-  <%= @data_keagamaan_katolik.user %>
+  <strong>Pembuat:</strong>
+  <%= @data_keagamaan_katolik.user.nama_lengkap %>
 </p>
 
 <%= link_to 'Edit', edit_data_keagamaan_katolik_path(@data_keagamaan_katolik) %> |
