@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'beranda/index'
   resources :data_keagamaan_katolik
   resources :peran
   resources :users
