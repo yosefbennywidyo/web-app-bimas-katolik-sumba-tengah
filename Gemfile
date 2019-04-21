@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem 'font-awesome-rails'
 # Devise for authentication
 gem 'devise'
+gem 'devise-i18n'
 # CanCanCan for authorization
 gem 'cancancan'
 # Rails Internationalization and localization
