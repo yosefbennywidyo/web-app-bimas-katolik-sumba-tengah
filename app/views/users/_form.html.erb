@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :peran_id %>
-    <%= collection_select(:user, :peran_id, Peran.all, :id, :name, {prompt: true}) %>
+    <%= collection_select(:user, :peran_id, Peran.all, :id, :nama_peran, {prompt: true}) %>
   </div>
 
   <div class="field">
@@ -27,8 +27,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :password %><br>
-    <%= f.password_field :password, placeholder: "Biarkan kosong jika tidak ingin mengubahnya" %>
+    <%= form.label :password %><br>
+    <%= form.password_field :password, placeholder: "Biarkan kosong jika tidak ingin mengubahnya" %>
   </div>
 
   <div class="actions">
