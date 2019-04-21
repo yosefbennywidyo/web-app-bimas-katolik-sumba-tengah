@@ -26,6 +26,7 @@ class DataKeagamaanKatolikController < ApplicationController
   # POST /data_keagamaan_katolik.json
   def create
     @data_keagamaan_katolik = DataKeagamaanKatolik.new(data_keagamaan_katolik_params)
+    @data_keagamaan_katolik.user_id = current_user.id
 
     respond_to do |format|
       if @data_keagamaan_katolik.save
