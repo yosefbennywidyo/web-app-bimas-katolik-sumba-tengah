@@ -12,6 +12,6 @@ class User < ApplicationRecord
 
   private
   def set_default_role
-    self.role ||= Peran.find_by_nama_peran('Pemirsa')
+    self.peran ||= Peran.find_by nama_peran: "Pemirsa" if self.peran.nil?
   end
 end
