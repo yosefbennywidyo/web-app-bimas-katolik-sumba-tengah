@@ -20,5 +20,8 @@ module WaBs
     config.i18n.load_path += Dir[Rails.root.join('locales', '*.{rb,yml}').to_s]
     #I18n.default_locale = :en # (note that `en` is already the default!)
     config.i18n.default_locale = :'id'
+
+    # Rails timezone
+    config.time_zone = 'Asia/Hong_Kong'
   end
 end
