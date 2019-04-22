@@ -1,0 +1,2 @@
+class DataPendidikanAgamaKatolik < ApplicationRecord
+end
