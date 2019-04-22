@@ -44,16 +44,17 @@ class Ability
         can :read, :all
       elsif user.peran.nama_peran == "Penyuluh Agama Katolik"
         can :read, :all
+        can :cru, LaporanPenyuluhAgamaKatolik
       elsif user.peran.nama_peran == "Pegawai Pendakat"
         can :read, :all
       elsif user.peran.nama_peran == "Pegawai Urakat"
         can :read, :all
-        can :cu, DataKeagamaanKatolik
+        can :cru, DataKeagamaanKatolik
       elsif user.peran.nama_peran == "Penyelenggara Pendakat"
         can :read, :all
       elsif user.peran.nama_peran == "Kasie Urakat"
         can :read, :all
-        can :destroy, DataKeagamaanKatolik
+        can :destroy, DataKeagamaanKatolik, LaporanPenyuluhAgamaKatolik
       elsif user.peran.nama_peran == "Admin"
         can :crud, :all
       end
