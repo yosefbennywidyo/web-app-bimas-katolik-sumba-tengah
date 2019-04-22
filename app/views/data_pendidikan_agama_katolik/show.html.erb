@@ -15,5 +15,10 @@
   <%= @data_pendidikan_agama_katolik.tautan %>
 </p>
 
+<p>
+  <strong>Pembuat:</strong>
+  <%= @data_pendidikan_agama_katolik.user.nama_lengkap %>
+</p>
+
 <%= link_to 'Edit', edit_data_pendidikan_agama_katolik_path(@data_pendidikan_agama_katolik) %> |
 <%= link_to 'Back', data_pendidikan_agama_katolik_index_path %>
