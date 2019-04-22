@@ -1,5 +1,6 @@
 class DataPendidikanAgamaKatolikController < ApplicationController
-  before_action :set_data_pendidikan_agama_katolik, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:index, :show]
+  load_and_authorize_resource
 
   # GET /data_pendidikan_agama_katolik
   # GET /data_pendidikan_agama_katolik.json
@@ -14,7 +15,6 @@ class DataPendidikanAgamaKatolikController < ApplicationController
 
   # GET /data_pendidikan_agama_katolik/new
   def new
-    @data_pendidikan_agama_katolik = DataPendidikanAgamaKatolik.new
   end
 
   # GET /data_pendidikan_agama_katolik/1/edit
@@ -24,7 +24,7 @@ class DataPendidikanAgamaKatolikController < ApplicationController
   # POST /data_pendidikan_agama_katolik
   # POST /data_pendidikan_agama_katolik.json
   def create
-    @data_pendidikan_agama_katolik = DataPendidikanAgamaKatolik.new(data_pendidikan_agama_katolik_params)
+    @data_pendidikan_agama_katolik.user_id = current_user.id
 
     respond_to do |format|
       if @data_pendidikan_agama_katolik.save
@@ -63,9 +63,6 @@ class DataPendidikanAgamaKatolikController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_data_pendidikan_agama_katolik
-      @data_pendidikan_agama_katolik = DataPendidikanAgamaKatolik.find(params[:id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def data_pendidikan_agama_katolik_params
