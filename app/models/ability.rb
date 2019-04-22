@@ -30,10 +30,33 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-    if user.admin?
-      can :manage, :all
-    else
+    alias_action :create, :read, :update, :destroy, to: :crud
+    alias_action :create, :read, :update, to: :cru
+    alias_action :create, :update, to: :cu
+    alias_action :create, :read, to: :cr
+    alias_action :create, to: :c
+    unless user
       can :read, :all
+    else
+      if user.peran.nama_peran == "Pemirsa"
+        can :read, :all
+      elsif user.peran.nama_peran == "Guru Agama Katolik"
+        can :read, :all
+      elsif user.peran.nama_peran == "Penyuluh Agama Katolik"
+        can :read, :all
+      elsif user.peran.nama_peran == "Pegawai Pendakat"
+        can :read, :all
+      elsif user.peran.nama_peran == "Pegawai Urakat"
+        can :read, :all
+        can :cu, DataKeagamaanKatolik
+      elsif user.peran.nama_peran == "Penyelenggara Pendakat"
+        can :read, :all
+      elsif user.peran.nama_peran == "Kasie Urakat"
+        can :read, :all
+        can :destroy, DataKeagamaanKatolik
+      elsif user.peran.nama_peran == "Admin"
+        can :crud, :all
+      end
     end
   end
 end
