@@ -39,10 +39,20 @@ puts "Berhasil membuat #{User.count} User"
 puts ""
 puts ""
 puts "Membuat dummy Data Keagamaan Katolik"
-data_keagamaan_katolik_1 = DataKeagamaanKatolik.create({judul: "Data Keagamaan Katolik I", keterangan: "Keterangan rinci tentang Data Keagamaan Katolik I", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_2.id})
-data_keagamaan_katolik_1 = DataKeagamaanKatolik.create({judul: "Data Keagamaan Katolik II", keterangan: "Keterangan rinci tentang Data Keagamaan Katolik II", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_2.id})
-data_keagamaan_katolik_1 = DataKeagamaanKatolik.create({judul: "Data Keagamaan Katolik III", keterangan: "Keterangan rinci tentang Data Keagamaan Katolik III", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_2.id})
-data_keagamaan_katolik_1 = DataKeagamaanKatolik.create({judul: "Data Keagamaan Katolik IV", keterangan: "Keterangan rinci tentang Data Keagamaan Katolik IV", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_2.id})
-data_keagamaan_katolik_1 = DataKeagamaanKatolik.create({judul: "Data Keagamaan Katolik V", keterangan: "Keterangan rinci tentang Data Keagamaan Katolik V", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_2.id})
+data_keagamaan_katolik_1 = DataKeagamaanKatolik.create({judul: "Data Keagamaan Katolik I", keterangan: "Keterangan rinci tentang Data Keagamaan Katolik I", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_5.id})
+data_keagamaan_katolik_1 = DataKeagamaanKatolik.create({judul: "Data Keagamaan Katolik II", keterangan: "Keterangan rinci tentang Data Keagamaan Katolik II", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_5.id})
+data_keagamaan_katolik_1 = DataKeagamaanKatolik.create({judul: "Data Keagamaan Katolik III", keterangan: "Keterangan rinci tentang Data Keagamaan Katolik III", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_5.id})
+data_keagamaan_katolik_1 = DataKeagamaanKatolik.create({judul: "Data Keagamaan Katolik IV", keterangan: "Keterangan rinci tentang Data Keagamaan Katolik IV", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_5.id})
+data_keagamaan_katolik_1 = DataKeagamaanKatolik.create({judul: "Data Keagamaan Katolik V", keterangan: "Keterangan rinci tentang Data Keagamaan Katolik V", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_5.id})
 puts ""
 puts "Berhasil membuat #{DataKeagamaanKatolik.count} Data Keagamaan Katolik"
+puts ""
+puts ""
+puts "Membuat dummy Laporan Penyuluh Agama Katolik"
+laporan_penyuluh_agama_katolik_1 = LaporanPenyuluhAgamaKatolik.create({judul: "Laporan Penyuluh Agama Katolik I", keterangan: "Keterangan rinci tentang Laporan Penyuluh Agama Katolik I", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_4.id})
+laporan_penyuluh_agama_katolik_2 = LaporanPenyuluhAgamaKatolik.create({judul: "Laporan Penyuluh Agama Katolik II", keterangan: "Keterangan rinci tentang Laporan Penyuluh Agama Katolik II", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_4.id})
+laporan_penyuluh_agama_katolik_3 = LaporanPenyuluhAgamaKatolik.create({judul: "Laporan Penyuluh Agama Katolik III", keterangan: "Keterangan rinci tentang Laporan Penyuluh Agama Katolik III", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_4.id})
+laporan_penyuluh_agama_katolik_4 = LaporanPenyuluhAgamaKatolik.create({judul: "Laporan Penyuluh Agama Katolik IV", keterangan: "Keterangan rinci tentang Laporan Penyuluh Agama Katolik IV", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_4.id})
+laporan_penyuluh_agama_katolik_5 = LaporanPenyuluhAgamaKatolik.create({judul: "Laporan Penyuluh Agama Katolik V", keterangan: "Keterangan rinci tentang Laporan Penyuluh Agama Katolik V", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_4.id})
+puts ""
+puts "Berhasil membuat #{LaporanPenyuluhAgamaKatolik.count} Laporan Penyuluh Agama Katolik"
