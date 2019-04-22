@@ -1,6 +1,6 @@
 class PeranController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!
-  before_action :set_peran, only: [:show, :edit, :update, :destroy]
 
   # GET /peran
   # GET /peran.json
@@ -20,7 +20,6 @@ class PeranController < ApplicationController
 
   # GET /peran/new
   def new
-    @peran = Peran.new
   end
 
   # GET /peran/1/edit
@@ -30,7 +29,6 @@ class PeranController < ApplicationController
   # POST /peran
   # POST /peran.json
   def create
-    @peran = Peran.new(peran_params)
 
     respond_to do |format|
       if @peran.save
@@ -69,9 +67,6 @@ class PeranController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_peran
-      @peran = Peran.find(params[:id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def peran_params

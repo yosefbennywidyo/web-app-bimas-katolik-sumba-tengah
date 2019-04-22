@@ -1,6 +1,6 @@
 class DataKeagamaanKatolikController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!, :except => [:index, :show]
-  before_action :set_data_keagamaan_katolik, only: [:show, :edit, :update, :destroy]
 
   # GET /data_keagamaan_katolik
   # GET /data_keagamaan_katolik.json
@@ -15,7 +15,6 @@ class DataKeagamaanKatolikController < ApplicationController
 
   # GET /data_keagamaan_katolik/new
   def new
-    @data_keagamaan_katolik = DataKeagamaanKatolik.new
   end
 
   # GET /data_keagamaan_katolik/1/edit
@@ -25,7 +24,6 @@ class DataKeagamaanKatolikController < ApplicationController
   # POST /data_keagamaan_katolik
   # POST /data_keagamaan_katolik.json
   def create
-    @data_keagamaan_katolik = DataKeagamaanKatolik.new(data_keagamaan_katolik_params)
     @data_keagamaan_katolik.user_id = current_user.id
 
     respond_to do |format|
@@ -65,9 +63,6 @@ class DataKeagamaanKatolikController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_data_keagamaan_katolik
-      @data_keagamaan_katolik = DataKeagamaanKatolik.find(params[:id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def data_keagamaan_katolik_params
