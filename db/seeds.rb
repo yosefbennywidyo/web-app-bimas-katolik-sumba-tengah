@@ -33,7 +33,7 @@ user_8 = User.create({nama_lengkap: "Dummy User II", email: "du-2@kemenag-sumten
 user_9 = User.create({nama_lengkap: "Dummy User III", email: "du-3@kemenag-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_1.id})
 user_10 = User.create({nama_lengkap: "Dummy User IV", email: "du-4@kemenag-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_1.id})
 user_11 = User.create({nama_lengkap: "Dummy User V", email: "du-5@kemenag-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_1.id})
-user_12 = User.create({nama_lengkap: "Admin", email: "admin@kemenag-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_8.id})
+user_12 = User.create({nama_lengkap: "Administrator", email: "admin@kemenag-sumteng.go.id", password: "qwerty", password_confirmation: "qwerty", peran_id: peran_8.id})
 puts ""
 puts "Berhasil membuat #{User.count} User"
 puts ""
