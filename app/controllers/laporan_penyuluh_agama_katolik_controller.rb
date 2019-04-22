@@ -1,5 +1,6 @@
 class LaporanPenyuluhAgamaKatolikController < ApplicationController
-  before_action :set_laporan_penyuluh_agama_katolik, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :except => [:index, :show]
+  load_and_authorize_resource
 
   # GET /laporan_penyuluh_agama_katolik
   # GET /laporan_penyuluh_agama_katolik.json
@@ -14,7 +15,6 @@ class LaporanPenyuluhAgamaKatolikController < ApplicationController
 
   # GET /laporan_penyuluh_agama_katolik/new
   def new
-    @laporan_penyuluh_agama_katolik = LaporanPenyuluhAgamaKatolik.new
   end
 
   # GET /laporan_penyuluh_agama_katolik/1/edit
@@ -24,7 +24,7 @@ class LaporanPenyuluhAgamaKatolikController < ApplicationController
   # POST /laporan_penyuluh_agama_katolik
   # POST /laporan_penyuluh_agama_katolik.json
   def create
-    @laporan_penyuluh_agama_katolik = LaporanPenyuluhAgamaKatolik.new(laporan_penyuluh_agama_katolik_params)
+    @laporan_penyuluh_agama_katolik.user_id = current_user.id
 
     respond_to do |format|
       if @laporan_penyuluh_agama_katolik.save
@@ -63,12 +63,9 @@ class LaporanPenyuluhAgamaKatolikController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_laporan_penyuluh_agama_katolik
-      @laporan_penyuluh_agama_katolik = LaporanPenyuluhAgamaKatolik.find(params[:id])
-    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def laporan_penyuluh_agama_katolik_params
-      params.require(:laporan_penyuluh_agama_katolik).permit(:judul, :keterangan, :tautan)
+      params.require(:laporan_penyuluh_agama_katolik).permit(:judul, :keterangan, :tautan, :user_id)
     end
 end
