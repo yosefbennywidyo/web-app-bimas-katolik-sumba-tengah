@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :laporan_penyuluh_agama_katolik
   devise_for :users
 
   scope "/mengelola" do

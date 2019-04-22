@@ -1,0 +1,2 @@
+class LaporanPenyuluhAgamaKatolik < ApplicationRecord
+end
