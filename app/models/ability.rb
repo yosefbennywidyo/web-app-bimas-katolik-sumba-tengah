@@ -38,25 +38,32 @@ class Ability
     unless user
       can :read, :all
     else
-      if user.peran.nama_peran == "Pemirsa"
-        can :read, :all
-      elsif user.peran.nama_peran == "Guru Agama Katolik"
-        can :read, :all
-      elsif user.peran.nama_peran == "Penyuluh Agama Katolik"
-        can :read, :all
-        can :cru, LaporanPenyuluhAgamaKatolik
-      elsif user.peran.nama_peran == "Pegawai Pendakat"
-        can :read, :all
-      elsif user.peran.nama_peran == "Pegawai Urakat"
-        can :read, :all
-        can :cru, DataKeagamaanKatolik
+      if user.peran.nama_peran == "Admin"
+        can :manage, :all
       elsif user.peran.nama_peran == "Penyelenggara Pendakat"
-        can :read, :all
+        can :crud, DataKeagamaanKatolik, LaporanPenyuluhAgamaKatolik
       elsif user.peran.nama_peran == "Kasie Urakat"
-        can :read, :all
-        can :destroy, DataKeagamaanKatolik, LaporanPenyuluhAgamaKatolik
-      elsif user.peran.nama_peran == "Admin"
-        can :crud, :all
+        can :crud, DataKeagamaanKatolik, LaporanPenyuluhAgamaKatolik
+      elsif user.peran.nama_peran == "Penyuluh Agama Katolik"
+        can :read, DataKeagamaanKatolik, LaporanPenyuluhAgamaKatolik
+        can :create, LaporanPenyuluhAgamaKatolik
+        can :update, LaporanPenyuluhAgamaKatolik do |laporan_penyuluh_agama_katolik|
+          laporan_penyuluh_agama_katolik.try(:user) == user
+        end
+        can :destroy, LaporanPenyuluhAgamaKatolik do |laporan_penyuluh_agama_katolik|
+          laporan_penyuluh_agama_katolik.try(:user) == user
+        end
+      elsif user.peran.nama_peran == "Pegawai Urakat"
+        can :read, DataKeagamaanKatolik, LaporanPenyuluhAgamaKatolik
+        can :create, DataKeagamaanKatolik
+        can :update, DataKeagamaanKatolik do |data_keagamaan_katolik|
+          data_keagamaan_katolik.try(:user) == user
+        end
+        can :destroy, DataKeagamaanKatolik do |data_keagamaan_katolik|
+          data_keagamaan_katolik.try(:user) == user
+        end
+      elsif user.peran.nama_peran == "Pemirsa"
+        can :read, DataKeagamaanKatolik, LaporanPenyuluhAgamaKatolik
       end
     end
   end
