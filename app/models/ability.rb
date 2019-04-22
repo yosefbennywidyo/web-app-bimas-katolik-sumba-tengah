@@ -38,14 +38,28 @@ class Ability
     unless user
       can :read, DataKeagamaanKatolik
     else
+      # Admin
+      # can MANAGE  all
       if user.peran.nama_peran == "Admin"
         can :manage, :all
+      # Penyelenggara Pendakat
+      # can READ        DataKeagamaanKatolik, LaporanPenyuluhAgamaKatolik
+      # can CRUD        DataPendidikanAgamaKatolik - SEMUA
       elsif user.peran.nama_peran == "Penyelenggara Pendakat"
-        can :crud, DataKeagamaanKatolik, LaporanPenyuluhAgamaKatolik
-      elsif user.peran.nama_peran == "Kasie Urakat"
-        can :crud, DataKeagamaanKatolik, LaporanPenyuluhAgamaKatolik
-      elsif user.peran.nama_peran == "Penyuluh Agama Katolik"
         can :read, DataKeagamaanKatolik, LaporanPenyuluhAgamaKatolik
+        can :crud, DataPendidikanAgamaKatolik
+      # Kasie Urakat
+      # can READ        LaporanPenyuluhAgamaKatolik, DataPendidikanAgamaKatolik
+      # can CRUD        DataKeagamaanKatolik - SEMUA
+      elsif user.peran.nama_peran == "Kasie Urakat"
+        can :read, LaporanPenyuluhAgamaKatolik, DataPendidikanAgamaKatolik
+        can :crud, DataKeagamaanKatolik
+      # Penyuluh Agama Katolik
+      # can READ        DataKeagamaanKatolik, DataPendidikanAgamaKatolik, LaporanPenyuluhAgamaKatolik
+      # can CREATE      LaporanPenyuluhAgamaKatolik
+      # can UP & DEL    LaporanPenyuluhAgamaKatolik milik sendiri          
+      elsif user.peran.nama_peran == "Penyuluh Agama Katolik"
+        can :read, DataKeagamaanKatolik, DataPendidikanAgamaKatolik, LaporanPenyuluhAgamaKatolik
         can :create, LaporanPenyuluhAgamaKatolik
         can :update, LaporanPenyuluhAgamaKatolik do |laporan_penyuluh_agama_katolik|
           laporan_penyuluh_agama_katolik.try(:user) == user
@@ -53,8 +67,12 @@ class Ability
         can :destroy, LaporanPenyuluhAgamaKatolik do |laporan_penyuluh_agama_katolik|
           laporan_penyuluh_agama_katolik.try(:user) == user
         end
+      # Pegawai Urakat
+      # can READ        DataKeagamaanKatolik, DataPendidikanAgamaKatolik, LaporanPenyuluhAgamaKatolik
+      # can CREATE      DataKeagamaanKatolik
+      # can UP & DEL    DataKeagamaanKatolik milik sendiri
       elsif user.peran.nama_peran == "Pegawai Urakat"
-        can :read, DataKeagamaanKatolik, LaporanPenyuluhAgamaKatolik
+        can :read, DataKeagamaanKatolik, DataPendidikanAgamaKatolik, LaporanPenyuluhAgamaKatolik
         can :create, DataKeagamaanKatolik
         can :update, DataKeagamaanKatolik do |data_keagamaan_katolik|
           data_keagamaan_katolik.try(:user) == user
@@ -62,8 +80,36 @@ class Ability
         can :destroy, DataKeagamaanKatolik do |data_keagamaan_katolik|
           data_keagamaan_katolik.try(:user) == user
         end
+      # Guru Agama Katolik
+      # can READ        DataKeagamaanKatolik, DataPendidikanAgamaKatolik
+      # can CREATE      LaporanPenyuluhAgamaKatolik
+      # can UP & DEL    LaporanPenyuluhAgamaKatolik milik sendiri
+      elsif user.peran.nama_peran == "Guru Agama Katolik"
+        can :read, DataKeagamaanKatolik, DataPendidikanAgamaKatolik
+        can :create, LaporanPenyuluhAgamaKatolik # TODO change to LaporanGuruAgamaKatolik
+        can :update, LaporanPenyuluhAgamaKatolik do |laporan_penyuluh_agama_katolik| # TODO change to LaporanGuruAgamaKatolik
+          laporan_penyuluh_agama_katolik.try(:user) == user
+        end
+        can :destroy, LaporanPenyuluhAgamaKatolik do |laporan_penyuluh_agama_katolik|
+          laporan_penyuluh_agama_katolik.try(:user) == user
+        end
+      # Pegawai Pendakat
+      # can READ        DataKeagamaanKatolik, DataPendidikanAgamaKatolik
+      # can CREATE      DataKeagamaanKatolik
+      # can UP & DEL    DataKeagamaanKatolik milik sendiri
+      elsif user.peran.nama_peran == "Pegawai Pendakat"
+        can :read, DataKeagamaanKatolik, DataPendidikanAgamaKatolik
+        can :create, DataPendidikanAgamaKatolik
+        can :update, DataPendidikanAgamaKatolik do |data_pendidikan_agama_katolik|
+          data_pendidikan_agama_katolik.try(:user) == user
+        end
+        can :destroy, DataPendidikanAgamaKatolik do |data_pendidikan_agama_katolik|
+          data_pendidikan_agama_katolik.try(:user) == user
+        end
+      # Pemirsa
+      # can READ        DataKeagamaanKatolik, DataPendidikanAgamaKatolik
       elsif user.peran.nama_peran == "Pemirsa"
-        can :read, DataKeagamaanKatolik
+        can :read, DataKeagamaanKatolik, DataPendidikanAgamaKatolik
       end
     end
   end
