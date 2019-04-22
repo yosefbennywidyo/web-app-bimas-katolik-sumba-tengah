@@ -10,11 +10,7 @@ class User < ApplicationRecord
 
   #before_create :set_default_role
   # or 
-  before_validation :set_default_role 
-
-  def admin?
-    self.peran.nama_peran == "Admin"
-  end
+  before_validation :set_default_role
 
   private
   def set_default_role
