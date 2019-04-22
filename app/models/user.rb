@@ -7,6 +7,7 @@ class User < ApplicationRecord
          :trackable
   belongs_to :peran
   has_many :data_keagamaan_katolik
+  has_many :laporan_penyuluh_agama_katolik
 
   #before_create :set_default_role
   # or 
