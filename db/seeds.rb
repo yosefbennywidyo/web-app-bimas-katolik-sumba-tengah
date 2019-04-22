@@ -56,3 +56,13 @@ LaporanPenyuluhAgamaKatolik.create!({judul: "Laporan Penyuluh Agama Katolik IV",
 LaporanPenyuluhAgamaKatolik.create!({judul: "Laporan Penyuluh Agama Katolik V", keterangan: "Keterangan rinci tentang Laporan Penyuluh Agama Katolik V", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_4.id})
 puts ""
 puts "Berhasil membuat #{LaporanPenyuluhAgamaKatolik.count} Laporan Penyuluh Agama Katolik"
+puts ""
+puts ""
+puts "Membuat dummy Data Pendidikan Agama Katolik"
+DataPendidikanAgamaKatolik.create!({judul: "Data Pendidikan Agama Katolik I", keterangan: "Keterangan rinci tentang Data Pendidikan Agama Katolik I", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_3.id})
+DataPendidikanAgamaKatolik.create!({judul: "Data Pendidikan Agama Katolik II", keterangan: "Keterangan rinci tentang Data Pendidikan Agama Katolik II", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_3.id})
+DataPendidikanAgamaKatolik.create!({judul: "Data Pendidikan Agama Katolik III", keterangan: "Keterangan rinci tentang Data Pendidikan Agama Katolik III", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_3.id})
+DataPendidikanAgamaKatolik.create!({judul: "Data Pendidikan Agama Katolik IV", keterangan: "Keterangan rinci tentang Data Pendidikan Agama Katolik IV", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_3.id})
+DataPendidikanAgamaKatolik.create!({judul: "Data Pendidikan Agama Katolik V", keterangan: "Keterangan rinci tentang Data Pendidikan Agama Katolik V", tautan: "148cjHGXBqqghbunQxGC2tDp8z1YeCnuN", user_id: user_3.id})
+puts ""
+puts "Berhasil membuat #{DataPendidikanAgamaKatolik.count} Laporan Penyuluh Agama Katolik"
