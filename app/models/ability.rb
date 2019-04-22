@@ -36,7 +36,7 @@ class Ability
     alias_action :create, :read, to: :cr
     alias_action :create, to: :c
     unless user
-      can :read, :all
+      can :read, DataKeagamaanKatolik
     else
       if user.peran.nama_peran == "Admin"
         can :manage, :all
@@ -63,7 +63,7 @@ class Ability
           data_keagamaan_katolik.try(:user) == user
         end
       elsif user.peran.nama_peran == "Pemirsa"
-        can :read, DataKeagamaanKatolik, LaporanPenyuluhAgamaKatolik
+        can :read, DataKeagamaanKatolik
       end
     end
   end
