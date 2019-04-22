@@ -12,6 +12,10 @@ class User < ApplicationRecord
   # or 
   before_validation :set_default_role 
 
+  def admin?
+    self.peran.nama_peran == "Admin"
+  end
+
   private
   def set_default_role
     self.peran ||= Peran.find_by nama_peran: "Pemirsa" if self.peran.nil?
